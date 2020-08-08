@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/21 23:17:21 by skennith          #+#    #+#             */
-/*   Updated: 2020/08/08 13:40:01 by richardbrac      ###   ########.fr       */
+/*   Updated: 2020/08/08 16:06:41 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,35 +63,35 @@ typedef struct		s_pfstruct //структура, в которой хранит�
 }					t_pfstruct;
 
 int					ft_printf(const char *format, ...);
-int					set_flag(t_pfstruct *data, char ch);
-int					set_size(t_pfstruct *data, int *i);
-int					set_width(t_pfstruct *data, char ch);
+int					set_flag(t_pfstruct *data, char ch);//
+int					set_size(t_pfstruct *data, int *i);//
+int					set_width(t_pfstruct *data, char ch);//
 int					set_precision(t_pfstruct *data, char ch);
-void				print_int(t_pfstruct *data);
-void				print_char(t_pfstruct *data);
-void				print_string(t_pfstruct *data);
-void				print_percent(t_pfstruct *data);
-void				print_unsigned_int(t_pfstruct *data);
-void				print_octal(t_pfstruct *data);
-void				print_hex(t_pfstruct *data);
-void				print_pointer(t_pfstruct *data);
-void				print_float(t_pfstruct *data);
-void				print_float2(t_pfstruct *data);
+void				p_integer_main(t_pfstruct *data);
+void				p_char(t_pfstruct *data);
+void				p_string_main(t_pfstruct *data);
+void				p_percent(t_pfstruct *data);
+void				print_unsigned_int(t_pfstruct *data);//
+void				print_octal(t_pfstruct *data);//
+void				print_hex(t_pfstruct *data);//
+void				print_pointer(t_pfstruct *data);//
+void				print_float(t_pfstruct *data);//
+void				print_float2(t_pfstruct *data);//
 
-int					write_chars(int i, char ch);
-char				*ft_itoa_base(uintmax_t num, uintmax_t not);
-void				precision_zero(t_pfstruct *data);
-int					ft_putstrcount(char const *s);
-int					md(int i);
-long double			md_double(long double i);
-void				sign_or_space(t_pfstruct *data);
+int					write_chars(int i, char ch);//
+char				*ft_itoa_base(uintmax_t num, uintmax_t not);//
+void				precision_zero(t_pfstruct *data);//
+int					ft_putstrcount(char const *s);//
+int					md(int i);//
+long double			md_double(long double i);//
+void				sign_or_space(t_pfstruct *data);//
 
-char				*power2(int pow);
+char				*power2(int pow);//
 
-void				deinit(t_pfstruct *data);
-void				pf_init(t_pfstruct *data);
+void				deinit(t_pfstruct *data);//
+void				pf_init(t_pfstruct *data);//
 
-char				*from_bin(char *str);
-char				*ft_ftoa_base2(long double num);
+char				*from_bin(char *str);//
+char				*ft_ftoa_base2(long double num);//
 
 #endif

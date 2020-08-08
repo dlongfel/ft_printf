@@ -21,7 +21,7 @@ static void     switch_flag(t_pfstruct *data)
     else if (data->fs.type == 's')
         print_string(data);
     else if (data->fs.type == '%')
-        print_percent(data);
+        p_percent(data);
     else if (data->fs.type == 'u')
         print_unsigned_int(data);
     else if (data->fs.type == 'o')
