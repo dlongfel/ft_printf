@@ -82,3 +82,38 @@ static char     *pars_fs(char *flag, t_pfstruct *data)
     return (flag);
     
 }
+
+static int		parsformat(t_pfstruct *data)
+{
+	char *p;
+
+	p = &data->str[0];
+	while (*p)
+	{
+		if (*p && *p != '%')
+		{
+			data->pfreturn += write(1, p, 1);
+			p++;
+		}
+		else if (p++)
+		{
+			p = pars_fs(p, data);
+			if (data->fs.str)
+				if (newfs(data, 1, 0, 0))
+					switch_print_value(data);
+		}
+	}
+	return (data->pfreturn);
+}
+
+int				ft_printf(const char *format, ...)
+{
+	int			result;
+	t_pfstruct	data;
+
+	pf_init(&data);
+	va_start(data.args, format);
+	data.str = (char *)format;
+	result = parsformat(&data);
+	return (result);
+}
