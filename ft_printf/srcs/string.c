@@ -6,13 +6,13 @@
 /*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 15:47:48 by dlongfel          #+#    #+#             */
-/*   Updated: 2020/08/09 15:08:18 by dlongfel         ###   ########.fr       */
+/*   Updated: 2020/08/09 16:31:00 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void        p_string1(t_pfstruct *data, int check, int len, char ch)
+void        p_string_1(t_pfstruct *data, int check, int len, char ch)
 {
     if (data->fs.flag.minus || check)
     {
@@ -58,7 +58,7 @@ void        p_string_main(t_pfstruct *data)
     data->fs.wid = data->fs.wid < 0 ? data->fs.wid * -1 : data->fs.wid;
     len_char = data->fs.wid - (int)ft_strlen(data->fs.fnl);
     if (len_char > 0)
-        p_string1(data, check_wid, len_char, ch);
+        p_string_1(data, check_wid, len_char, ch);
     else
         data->pfreturn += ft_putstrcount(data->fs.fnl);
 }

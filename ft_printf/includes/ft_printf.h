@@ -6,7 +6,7 @@
 /*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/21 23:17:21 by skennith          #+#    #+#             */
-/*   Updated: 2020/08/09 15:30:57 by dlongfel         ###   ########.fr       */
+/*   Updated: 2020/08/09 16:34:46 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,13 @@ void				print_float2(t_pfstruct *data);//
 
 int					write_ch(int i, char ch);
 char				*ft_itoa_base(uintmax_t num, uintmax_t not);
-void				prec0(t_pfstruct *data);
+void				prec_0(t_pfstruct *data);
 int					ft_putstrcount(char const *s);
-int					md(int i);//
-long double			md_double(long double i);//
+int					modulus(int i);
+long double			modulus_double(long double i);
 void				spacensign(t_pfstruct *data);
 
-char				*power2(int pow);//
+char				*power_2(int pow);
 
 void				deinit(t_pfstruct *data);//
 void				pf_init(t_pfstruct *data);//

@@ -6,7 +6,7 @@
 /*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 12:56:27 by richardbrac       #+#    #+#             */
-/*   Updated: 2020/08/09 15:09:52 by dlongfel         ###   ########.fr       */
+/*   Updated: 2020/08/09 16:33:06 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void			p_integer(t_pfstruct *data)
 	}
 }
 
-void			p_integer2(t_pfstruct *data)
+void			p_integer_2(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
@@ -58,7 +58,7 @@ void			p_integer2(t_pfstruct *data)
 	}
 }
 
-void			p_integer3(t_pfstruct *data)
+void			p_integer_3(t_pfstruct *data)
 {
 	if (data->fs.sign)
 		data->fs.flag.space = 0;
@@ -67,7 +67,7 @@ void			p_integer3(t_pfstruct *data)
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= md(data->fs.wid) || \
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= md(data->fs.wid))
 		data->fs.wid = 0;
-	prec0(data);
+	prec_0(data);
 	if (data->fs.wid == 0)
 	{
 		if (data->fs.sign)
@@ -81,7 +81,7 @@ void			p_integer3(t_pfstruct *data)
 		if (data->fs.flag.minus || data->fs.wid < 0)
 			p_integer(data);
 		else
-			p_integer2(data);
+			p_integer_2(data);
 	}
 }
 
@@ -109,5 +109,5 @@ void			p_integer_main(t_pfstruct *data)
 	}
 	data->fs.fnl = num == 0 && data->fs.pr_z && \
 	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 10);
-	p_integer3(data);
+	p_integer_3(data);
 }

@@ -6,13 +6,13 @@
 /*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 16:14:29 by dlongfel          #+#    #+#             */
-/*   Updated: 2020/08/09 15:08:30 by dlongfel         ###   ########.fr       */
+/*   Updated: 2020/08/09 16:32:40 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void        p_uint1(t_pfstruct *data)
+void        p_uint_1(t_pfstruct *data)
 {
     if (data->fs.flag.zero)
     {
@@ -39,7 +39,7 @@ void        p_uint1(t_pfstruct *data)
     }
 }
 
-void        p_uint2(t_pfstruct *data)
+void        p_uint_2(t_pfstruct *data)
 {
     if (!data->fs.wid)
     {
@@ -61,7 +61,7 @@ void        p_uint2(t_pfstruct *data)
             data->pfreturn += write_ch(data->fs.wid, ' ');
         }
         else
-            p_uint1(data);
+            p_uint_1(data);
     }
     
 }
@@ -91,5 +91,5 @@ void        p_uint_main(t_pfstruct *data)
     if (data->fs.precision + (data->fs.sign ? 1 : 0) >= data->fs.wid || \
     (int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= data->fs.wid)
         data->fs.wid = 0;
-    p_uint2(data);
+    p_uint_2(data);
 }

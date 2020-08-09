@@ -6,13 +6,13 @@
 /*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 14:33:11 by dlongfel          #+#    #+#             */
-/*   Updated: 2020/08/09 15:30:15 by dlongfel         ###   ########.fr       */
+/*   Updated: 2020/08/09 16:32:05 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void			p_oct1(t_pfstruct *data)
+void			p_oct_1(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
@@ -39,9 +39,9 @@ void			p_oct1(t_pfstruct *data)
 	
 }
 
-void			p_oct2(t_pfstruct *data)
+void			p_oct_2(t_pfstruct *data)
 {
-	prec0(data);
+	prec_0(data);
 	if (!data->fs.wid)
 	{
 		if (data->fs.sign)
@@ -89,5 +89,5 @@ void			p_oct_main(t_pfstruct *data)
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= data->fs.wid || \
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= data->fs.wid)
 		data->fs.wid = 0;
-	p_oct2(data);
+	p_oct_2(data);
 }
