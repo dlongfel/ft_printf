@@ -6,7 +6,7 @@
 /*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/21 23:17:21 by skennith          #+#    #+#             */
-/*   Updated: 2020/08/08 16:06:41 by dlongfel         ###   ########.fr       */
+/*   Updated: 2020/08/09 15:30:57 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,20 +71,20 @@ void				p_integer_main(t_pfstruct *data);
 void				p_char(t_pfstruct *data);
 void				p_string_main(t_pfstruct *data);
 void				p_percent(t_pfstruct *data);
-void				print_unsigned_int(t_pfstruct *data);//
-void				print_octal(t_pfstruct *data);//
+void				p_uint_main(t_pfstruct *data);
+void				p_oct_main(t_pfstruct *data);//
 void				print_hex(t_pfstruct *data);//
 void				print_pointer(t_pfstruct *data);//
 void				print_float(t_pfstruct *data);//
 void				print_float2(t_pfstruct *data);//
 
-int					write_chars(int i, char ch);//
-char				*ft_itoa_base(uintmax_t num, uintmax_t not);//
-void				precision_zero(t_pfstruct *data);//
-int					ft_putstrcount(char const *s);//
+int					write_ch(int i, char ch);
+char				*ft_itoa_base(uintmax_t num, uintmax_t not);
+void				prec0(t_pfstruct *data);
+int					ft_putstrcount(char const *s);
 int					md(int i);//
 long double			md_double(long double i);//
-void				sign_or_space(t_pfstruct *data);//
+void				spacensign(t_pfstruct *data);
 
 char				*power2(int pow);//
 

@@ -6,7 +6,7 @@
 /*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 16:14:29 by dlongfel          #+#    #+#             */
-/*   Updated: 2020/08/08 17:49:52 by dlongfel         ###   ########.fr       */
+/*   Updated: 2020/08/09 15:08:30 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void        p_uint1(t_pfstruct *data)
             data->pfreturn += write(1, &data->fs.sign, 1);
             data->fs.wid - 1;
         }
-        data->pfreturn += write_chars(data->fs.wid - \
+        data->pfreturn += write_ch(data->fs.wid - \
         (int)ft_strlen(data->fs.fnl), '0');
         data->pfreturn += ft_putstrcount(data->fs.fnl);
     }
     else
     {
-        data->pfreturn = write_chars(data->fs.wid - \
+        data->pfreturn = write_ch(data->fs.wid - \
         ft_strlen(data->fs.fnl) - (data->fs.sign ? 1 : 0), ' ');
         if (data->fs.sign)
         {
@@ -58,7 +58,7 @@ void        p_uint2(t_pfstruct *data)
             }
             data->pfreturn += ft_putstrcount(data->fs.fnl);
             data->fs.wid -= ft_strlen(data->fs.fnl);
-            data->pfreturn += write_chars(data->fs.wid, ' ');
+            data->pfreturn += write_ch(data->fs.wid, ' ');
         }
         else
             p_uint1(data);
@@ -66,7 +66,7 @@ void        p_uint2(t_pfstruct *data)
     
 }
 
-void        p_uiunt_main(t_pfstruct *data)
+void        p_uint_main(t_pfstruct *data)
 {
     intmax_t    num;
     

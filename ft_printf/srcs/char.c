@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   char.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 13:41:34 by richardbrac       #+#    #+#             */
-/*   Updated: 2020/08/08 14:20:06 by richardbrac      ###   ########.fr       */
+/*   Updated: 2020/08/09 15:07:45 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ void				p_char(t_pfstruct *data)
 	{
 		width = data->fs.wid - 1;
 		if (data->fs.flag.zero)
-			data->pfreturn += write_chars(width, '0');
+			data->pfreturn += write_ch(width, '0');
 		else
-			data->pfreturn += write_chars(width, ' ');
+			data->pfreturn += write_ch(width, ' ');
 		data->pfreturn =+ write(1, &character, 1);
 	}
 	else if (data->fs.wid && data->fs.flag.minus)
 	{
 		data->pfreturn += write(1, &character, 1);
-		width = data->pfreturn += write_chars(width, ' ');
+		width = data->pfreturn += write_ch(width, ' ');
 	}
 	else
 		data->pfreturn += write(1, &character, 1);
@@ -44,7 +44,7 @@ void				p_percent(t_pfstruct *data)
 	{
 		width = data->fs.wid - 1;
 		if (data->fs.flag.zero)
-			data->pfreturn += write_chars(width, '0');
+			data->pfreturn += write_ch(width, '0');
 		else
 			data->pfreturn += write(1, "%", 1);
 	}
@@ -52,7 +52,7 @@ void				p_percent(t_pfstruct *data)
 	{
 		data->pfreturn += write(1, "%", 1);
 		width = data->fs.wid - 1;
-		data->pfreturn += write_chars(width, ' ');
+		data->pfreturn += write_ch(width, ' ');
 	}
 	else
 		data->pfreturn += write(1, "%", 1);

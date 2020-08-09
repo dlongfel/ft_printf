@@ -6,7 +6,7 @@
 /*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 15:47:48 by dlongfel          #+#    #+#             */
-/*   Updated: 2020/08/08 16:12:03 by dlongfel         ###   ########.fr       */
+/*   Updated: 2020/08/09 15:08:18 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void        p_string1(t_pfstruct *data, int check, int len, char ch)
     if (data->fs.flag.minus || check)
     {
         data->pfreturn += ft_putstrcount(data->fs.fnl);
-        data->pfreturn += write_chars(len, ch);
+        data->pfreturn += write_ch(len, ch);
     }
     else
     {
-        data->pfreturn += write_chars(len, ch);
+        data->pfreturn += write_ch(len, ch);
         data->pfreturn += ft_putstrcount(data->fs.fnl);
     }
 }

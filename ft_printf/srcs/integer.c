@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   integer.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/08 12:56:27 by richardbrac       #+#    #+#             */
-/*   Updated: 2020/08/08 13:10:00 by richardbrac      ###   ########.fr       */
+/*   Updated: 2020/08/09 15:09:52 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ void			p_integer(t_pfstruct *data)
 {
 	if (data->fs.wid > 0)
 	{
-		sign_or_space(data);
+		spacensign(data);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 		data->fs.wid -= ft_strlen(data->fs.fnl);
-		data->pfreturn += write_chars(data->fs.wid, ' ');
+		data->pfreturn += write_ch(data->fs.wid, ' ');
 	}
 	else
 	{
 		data->fs.wid = md(data->fs.wid);
-		sign_or_space(data);
+		spacensign(data);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 		data->fs.wid += ft_strlen(data->fs.fnl);
-		data->pfreturn += write_chars(md(data->fs.wid), ' ');
+		data->pfreturn += write_ch(md(data->fs.wid), ' ');
 	}
 }
 
@@ -35,8 +35,8 @@ void			p_integer2(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
-		sign_or_space(data);
-		data->pfreturn += write_chars(data->fs.wid - \
+		spacensign(data);
+		data->pfreturn += write_ch(data->fs.wid - \
 		(int)ft_strlen(data->fs.fnl), '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
@@ -47,7 +47,7 @@ void			p_integer2(t_pfstruct *data)
 			data->pfreturn += write(1, " ", 1);
 			data->fs.wid -= 1;
 		}
-		data->pfreturn = write_chars(data->fs.wid - \
+		data->pfreturn = write_ch(data->fs.wid - \
 		ft_strlen(data->fs.fnl) - (data->fs.sign ? 1 : 0), ' ');
 		if (data->fs.sign)
 		{
@@ -67,7 +67,7 @@ void			p_integer3(t_pfstruct *data)
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= md(data->fs.wid) || \
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= md(data->fs.wid))
 		data->fs.wid = 0;
-	precision_zero(data);
+	prec0(data);
 	if (data->fs.wid == 0)
 	{
 		if (data->fs.sign)
