@@ -6,7 +6,7 @@
 /*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/21 23:17:21 by skennith          #+#    #+#             */
-/*   Updated: 2020/08/10 11:21:48 by dlongfel         ###   ########.fr       */
+/*   Updated: 2020/08/10 12:34:20 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ typedef struct		s_pfstruct //структура, в которой хранит�
 }					t_pfstruct;
 
 int					ft_printf(const char *format, ...);
-int					set_flag(t_pfstruct *data, char ch);//
-int					set_size(t_pfstruct *data, int *i);//
-int					set_width(t_pfstruct *data, char ch);//
+int					set_flag(t_pfstruct *data, char ch);
+int					set_size(t_pfstruct *data, int *i);
+int					set_width(t_pfstruct *data, char ch);
 int					set_precision(t_pfstruct *data, char ch);
 void				p_integer_main(t_pfstruct *data);
 void				p_char(t_pfstruct *data);
@@ -88,8 +88,8 @@ void				spacensign(t_pfstruct *data);
 
 char				*power_2(int pow);
 
-void				deinit(t_pfstruct *data);//
-void				pf_init(t_pfstruct *data);//
+void				deinit(t_pfstruct *data);
+void				pf_init(t_pfstruct *data);
 
 char				*from_bin(char *str);//
 char				*ft_ftoa_base2(long double num);//
