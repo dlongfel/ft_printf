@@ -6,7 +6,7 @@
 /*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 10:52:55 by dlongfel          #+#    #+#             */
-/*   Updated: 2020/08/10 11:21:19 by dlongfel         ###   ########.fr       */
+/*   Updated: 2020/08/10 13:21:56 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int				hex_sh(t_pfstruct *data, intmax_t num)
 void			bigger_x(t_pfstruct *data)
 {
 	int			i;
-	
+
 	i = 0;
 	while (data->fs.fnl[i])
 	{
@@ -99,7 +99,7 @@ void			p_hexademic_2(t_pfstruct *data, intmax_t num)
 void			p_hexademic_main(t_pfstruct *data)
 {
 	intmax_t	num;
-	
+
 	if (data->fs.size.ll)
 		num = (unsigned long long)va_arg(data->args, unsigned long long);
 	else if (data->fs.size.l)

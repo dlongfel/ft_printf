@@ -3,36 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/07 18:21:11 by richardbrac       #+#    #+#             */
-/*   Updated: 2020/08/07 18:21:11 by richardbrac      ###   ########.fr       */
+/*   Created: 2020/08/10 13:00:52 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/10 13:37:58 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void     switch_flag(t_pfstruct *data)
+static void		switch_flag(t_pfstruct *data)
 {
-    if (data->fs.type == 'd' || data->fs.type == 'i')
-        p_integer_main(data);
-    else if (data->fs.type == 'c')
-        print_char(data);
-    else if (data->fs.type == 's')
-        print_string(data);
-    else if (data->fs.type == '%')
-        p_percent(data);
-    else if (data->fs.type == 'u')
-        print_unsigned_int(data);
-    else if (data->fs.type == 'o')
-        print_octal(data);
-    else if (data->fs.type == 'x' || data->fs.type == 'X')
-        print_hex(data);
-    else if (data->fs.type == 'p')
-        print_pointer(data);
-    else if (data->fs.type == 'f')
-        print_float(data);
-    deinit(data);
+	if (data->fs.type == 'd' || data->fs.type == 'i')
+		p_integer_main(data);
+	else if (data->fs.type == 'c')
+		p_char(data);
+	else if (data->fs.type == 's')
+		p_string_main(data);
+	else if (data->fs.type == '%')
+		p_percent(data);
+	else if (data->fs.type == 'u')
+		p_uint_main(data);
+	else if (data->fs.type == 'o')
+		p_oct_main(data);
+	else if (data->fs.type == 'x' || data->fs.type == 'X')
+		p_hexademic_main(data);
+	else if (data->fs.type == 'p')
+		print_pointer(data);
+	else if (data->fs.type == 'f')
+		print_float(data);
+	deinit(data);
 }
 
 static int		newfs(t_pfstruct *data, int step, int i, int r)
@@ -60,32 +60,31 @@ static int		newfs(t_pfstruct *data, int step, int i, int r)
 	return (data->fs.type + r);
 }
 
-static char     *pars_fs(char *flag, t_pfstruct *data)
+static char		*pars_fs(char *flag, t_pfstruct *data)
 {
-    char        *dup;
-    int         i;
+	char		*dup;
+	int			i;
 
-    i = 0;
-    dup = (char *)ft_memalloc(sizeof(flag));
-    while (ft_strchr(SYMBOLSINFS, *flag) && *flag)
-    {
-        dup[i++] = *flag;
-        flag++;
-    }
-    if (*flag && ft_strchr(TYPESPF, *flag))
-    {
-        dup[i] = *flag++;
-        data->fs.str = dup;
-    }
-    else
-        ft_strdel(&dup);
-    return (flag);
-    
+	i = 0;
+	dup = (char *)ft_memalloc(sizeof(flag));
+	while (ft_strchr(SYMBOLSINFS, *flag) && *flag)
+	{
+		dup[i++] = *flag;
+		flag++;
+	}
+	if (*flag && ft_strchr(TYPESPF, *flag))
+	{
+		dup[i] = *flag++;
+		data->fs.str = dup;
+	}
+	else
+		ft_strdel(&dup);
+	return (flag);
 }
 
 static int		parsformat(t_pfstruct *data)
 {
-	char *p;
+	char		*p;
 
 	p = &data->str[0];
 	while (*p)

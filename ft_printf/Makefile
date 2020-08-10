@@ -10,12 +10,9 @@ SRC = ft_printf.c \
 		string.c \
 		oct.c \
 		hexademic.c \
-		float.c \//
-		float2.c \//
-		float3.c \//
-		utils.c \
+		utilities.c \
+		utilities2.c \
 		uint.c \
-		pointer.c \ //
 
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
