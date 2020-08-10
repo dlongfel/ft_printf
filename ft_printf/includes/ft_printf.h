@@ -6,7 +6,7 @@
 /*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/21 23:17:21 by skennith          #+#    #+#             */
-/*   Updated: 2020/08/09 16:34:46 by dlongfel         ###   ########.fr       */
+/*   Updated: 2020/08/10 11:21:48 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void				p_string_main(t_pfstruct *data);
 void				p_percent(t_pfstruct *data);
 void				p_uint_main(t_pfstruct *data);
 void				p_oct_main(t_pfstruct *data);//
-void				print_hex(t_pfstruct *data);//
+void				p_hexademic_main(t_pfstruct *data);
 void				print_pointer(t_pfstruct *data);//
 void				print_float(t_pfstruct *data);//
 void				print_float2(t_pfstruct *data);//
