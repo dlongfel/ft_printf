@@ -3,16 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   string.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skennith <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/09 14:37:48 by skennith          #+#    #+#             */
-/*   Updated: 2020/07/09 14:37:50 by skennith         ###   ########.fr       */
+/*   Created: 2020/08/08 15:47:48 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/10 12:52:37 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		precision_string(t_pfstruct *data)
+void		p_string_1(t_pfstruct *data, int check, int len, char ch)
+{
+	if (data->fs.flag.minus || check)
+	{
+		data->pfreturn += ft_putstrcount(data->fs.fnl);
+		data->pfreturn += write_ch(len, ch);
+	}
+	else
+	{
+		data->pfreturn += write_ch(len, ch);
+		data->pfreturn += ft_putstrcount(data->fs.fnl);
+	}
+}
+
+void		precis_str(t_pfstruct *data)
 {
 	char	*buf;
 
@@ -27,25 +41,11 @@ void		precision_string(t_pfstruct *data)
 	}
 }
 
-void		print_string2(t_pfstruct *data, int check, int len, char ch)
-{
-	if (data->fs.flag.minus || check)
-	{
-		data->pfreturn += ft_putstrcount(data->fs.fnl);
-		data->pfreturn += write_chars(len, ch);
-	}
-	else
-	{
-		data->pfreturn += write_chars(len, ch);
-		data->pfreturn += ft_putstrcount(data->fs.fnl);
-	}
-}
-
-void		print_string(t_pfstruct *data)
+void		p_string_main(t_pfstruct *data)
 {
 	char	ch;
-	int		len_ch;
-	int		check_w;
+	int		len_char;
+	int		check_wid;
 
 	ch = data->fs.flag.zero ? '0' : ' ';
 	data->fs.fnl = (char *)va_arg(data->args, char *);
@@ -53,12 +53,12 @@ void		print_string(t_pfstruct *data)
 		data->fs.fnl = ft_strdup("(null)");
 	else
 		data->fs.fnl = ft_strdup(data->fs.fnl);
-	precision_string(data);
-	check_w = data->fs.wid < 0 ? 1 : 0;
+	precis_str(data);
+	check_wid = data->fs.wid < 0 ? 1 : 0;
 	data->fs.wid = data->fs.wid < 0 ? data->fs.wid * -1 : data->fs.wid;
-	len_ch = data->fs.wid - (int)ft_strlen(data->fs.fnl);
-	if (len_ch > 0)
-		print_string2(data, check_w, len_ch, ch);
+	len_char = data->fs.wid - (int)ft_strlen(data->fs.fnl);
+	if (len_char > 0)
+		p_string_1(data, check_wid, len_char, ch);
 	else
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 }

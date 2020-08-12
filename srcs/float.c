@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   float.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cspaghet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/24 23:48:50 by cspaghet          #+#    #+#             */
-/*   Updated: 2020/07/24 23:48:56 by cspaghet         ###   ########.fr       */
+/*   Created: 2020/08/11 12:26:08 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 14:11:34 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,13 +122,14 @@ void			print_float(t_pfstruct *data)
 		data->fs.precision = 6;
 	if (num < 0 || data->fs.flag.plus)
 		data->fs.sign = num >= 0 ? '+' : '-';
-	data->fs.fnl = float_to_string(md_double(num), data->fs.precision, 0);
+	data->fs.fnl = float_to_string(modulus_double(num), data->fs.precision, 0);
 	if (data->fs.sign)
 		data->fs.flag.space = 0;
 	if (data->fs.flag.minus)
 		data->fs.flag.zero = 0;
-	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= md(data->fs.wid) || \
-	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= md(data->fs.wid))
+	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= \
+	modulus(data->fs.wid) || (int)ft_strlen(data->fs.fnl) + \
+	(data->fs.sign ? 1 : 0) >= modulus(data->fs.wid))
 		data->fs.wid = 0;
 	print_float2(data);
 }

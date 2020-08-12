@@ -3,20 +3,19 @@ NAME = libftprintf.a
 
 SRC_DIR = ./srcs/
 SRC = ft_printf.c \
-		setters.c \
-		init.c \
-		int.c \
+		set.c \
+		initialize.c \
+		integer.c \
 		char.c \
 		string.c \
-		octal.c \
-		hex.c \
+		oct.c \
+		hexademic.c \
 		float.c \
 		float2.c \
 		float3.c \
-		utils.c \
-		utils2.c \
-		utils3.c \
-		unsignedint.c \
+		utilities.c \
+		utilities2.c \
+		uint.c \
 		pointer.c \
 
 

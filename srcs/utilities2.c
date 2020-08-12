@@ -1,21 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   utilities2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cspaghet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/24 23:49:46 by cspaghet          #+#    #+#             */
-/*   Updated: 2020/07/24 23:49:50 by cspaghet         ###   ########.fr       */
+/*   Created: 2020/08/10 13:29:30 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 13:19:21 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char		*mult_on_half(char *s1, int i, int a)
+void			prec_0(t_pfstruct *data)
 {
-	char	*result;
-	int		x;
+	int		prec;
+	char	*buf;
+
+	prec = data->fs.precision - (int)ft_strlen(data->fs.fnl);
+	while (prec > 0)
+	{
+		buf = data->fs.fnl;
+		data->fs.fnl = ft_strjoin("0", data->fs.fnl);
+		ft_strdel(&buf);
+		prec--;
+	}
+}
+
+int				modulus(int i)
+{
+	return (i >= 0 ? i : i * -1);
+}
+
+long double		modulus_double(long double i)
+{
+	return (i >= 0 ? i : i * -1);
+}
+
+char			*mult_on_half(char *s1, int i, int a)
+{
+	char		*result;
+	int			x;
 
 	result = ft_strnew(ft_strlen(s1) + 1);
 	ft_memset(result, '0', ft_strlen(s1) + 1);
@@ -41,10 +66,10 @@ char		*mult_on_half(char *s1, int i, int a)
 	return (result);
 }
 
-char		*power2(int pow)
+char			*power_2(int pow)
 {
-	char	*ans;
-	char	*buf;
+	char		*ans;
+	char		*buf;
 
 	pow--;
 	ans = ft_strdup("5");

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/03 13:53:59 by richardbrac       #+#    #+#             */
-/*   Updated: 2020/07/03 13:54:00 by richardbrac      ###   ########.fr       */
+/*   Created: 2020/08/11 14:16:31 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 14:16:32 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

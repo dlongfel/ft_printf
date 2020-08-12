@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/01 19:57:21 by skennith          #+#    #+#             */
-/*   Updated: 2020/08/07 21:30:30 by richardbrac      ###   ########.fr       */
+/*   Created: 2020/08/10 13:00:52 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 12:53:05 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void		switch_print_value(t_pfstruct *data) //обработка типов данных вывода
+static void		switch_flag(t_pfstruct *data)
 {
 	if (data->fs.type == 'd' || data->fs.type == 'i')
-		print_int(data);
+		p_integer_main(data);
 	else if (data->fs.type == 'c')
-		print_char(data);
+		p_char(data);
 	else if (data->fs.type == 's')
-		print_string(data);
+		p_string_main(data);
 	else if (data->fs.type == '%')
-		print_percent(data);
+		p_percent(data);
 	else if (data->fs.type == 'u')
-		print_unsigned_int(data);
+		p_uint_main(data);
 	else if (data->fs.type == 'o')
-		print_octal(data);
+		p_oct_main(data);
 	else if (data->fs.type == 'x' || data->fs.type == 'X')
-		print_hex(data);
+		p_hexademic_main(data);
 	else if (data->fs.type == 'p')
 		print_pointer(data);
 	else if (data->fs.type == 'f')
@@ -84,7 +84,7 @@ static char		*pars_fs(char *flag, t_pfstruct *data)
 
 static int		parsformat(t_pfstruct *data)
 {
-	char *p;
+	char		*p;
 
 	p = &data->str[0];
 	while (*p)
@@ -99,7 +99,7 @@ static int		parsformat(t_pfstruct *data)
 			p = pars_fs(p, data);
 			if (data->fs.str)
 				if (newfs(data, 1, 0, 0))
-					switch_print_value(data);
+					switch_flag(data);
 		}
 	}
 	return (data->pfreturn);

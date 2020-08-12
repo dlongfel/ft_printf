@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/03 13:57:13 by richardbrac       #+#    #+#             */
-/*   Updated: 2020/07/03 13:57:14 by richardbrac      ###   ########.fr       */
+/*   Created: 2020/08/11 14:19:48 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 14:19:48 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

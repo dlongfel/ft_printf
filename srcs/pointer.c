@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pointer.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skennith <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/10 18:54:21 by skennith          #+#    #+#             */
-/*   Updated: 2020/07/10 18:54:23 by skennith         ###   ########.fr       */
+/*   Created: 2020/08/11 12:25:51 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 13:21:05 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ void			print_pointer2(t_pfstruct *data, int len)
 	if (data->fs.flag.minus)
 	{
 		data->pfreturn += ft_putstrcount("0x");
-		data->pfreturn += write_chars(data->fs.precision - len, '0');
+		data->pfreturn += write_ch(data->fs.precision - len, '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
-		data->pfreturn += write_chars(data->fs.wid - len - 2, ' ');
+		data->pfreturn += write_ch(data->fs.wid - len - 2, ' ');
 	}
 	else
 	{
-		data->pfreturn += write_chars(data->fs.wid - len - 2, ' ');
+		data->pfreturn += write_ch(data->fs.wid - len - 2, ' ');
 		data->pfreturn += ft_putstrcount("0x");
-		data->pfreturn += write_chars(data->fs.precision - len, '0');
+		data->pfreturn += write_ch(data->fs.precision - len, '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 }
@@ -42,7 +42,7 @@ void			print_pointer(t_pfstruct *data)
 	if (data->fs.wid - len - 2 < 1)
 	{
 		data->pfreturn += ft_putstrcount("0x");
-		data->pfreturn += write_chars(data->fs.precision - len, '0');
+		data->pfreturn += write_ch(data->fs.precision - len, '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 	else

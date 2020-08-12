@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/03 13:52:32 by richardbrac       #+#    #+#             */
-/*   Updated: 2020/07/03 13:52:33 by richardbrac      ###   ########.fr       */
+/*   Created: 2020/08/11 14:15:06 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 14:15:06 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

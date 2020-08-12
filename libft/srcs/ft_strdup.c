@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/03 13:55:29 by richardbrac       #+#    #+#             */
-/*   Updated: 2020/07/03 13:55:29 by richardbrac      ###   ########.fr       */
+/*   Created: 2020/08/11 14:18:06 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 14:18:07 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

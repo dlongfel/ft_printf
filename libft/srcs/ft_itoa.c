@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/03 13:52:58 by richardbrac       #+#    #+#             */
-/*   Updated: 2020/07/03 13:52:59 by richardbrac      ###   ########.fr       */
+/*   Created: 2020/08/11 14:15:31 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 14:15:32 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

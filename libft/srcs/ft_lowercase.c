@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lowercase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/03 13:53:02 by richardbrac       #+#    #+#             */
-/*   Updated: 2020/07/03 13:53:03 by richardbrac      ###   ########.fr       */
+/*   Created: 2020/08/11 14:15:35 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 14:15:36 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

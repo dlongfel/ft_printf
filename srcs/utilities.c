@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utilities.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skennith <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/09 14:38:33 by skennith          #+#    #+#             */
-/*   Updated: 2020/07/09 14:38:34 by skennith         ###   ########.fr       */
+/*   Created: 2020/08/09 14:41:24 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/10 13:30:47 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,6 @@ int							ft_putstrcount(char const *s)
 	{
 		ft_putchar(*s);
 		s++;
-		count++;
-	}
-	return (count);
-}
-
-int							write_chars(int i, char ch)
-{
-	char					count;
-
-	count = 0;
-	while (i > 0)
-	{
-		write(1, &ch, 1);
-		i--;
 		count++;
 	}
 	return (count);
@@ -66,22 +52,7 @@ char						*ft_itoa_base(uintmax_t num, uintmax_t not)
 	return (str);
 }
 
-void						precision_zero(t_pfstruct *data)
-{
-	int						precision;
-	char					*buf;
-
-	precision = data->fs.precision - (int)ft_strlen(data->fs.fnl);
-	while (precision > 0)
-	{
-		buf = data->fs.fnl;
-		data->fs.fnl = ft_strjoin("0", data->fs.fnl);
-		ft_strdel(&buf);
-		precision--;
-	}
-}
-
-void						sign_or_space(t_pfstruct *data)
+void						spacensign(t_pfstruct *data)
 {
 	if (data->fs.sign)
 	{
@@ -93,4 +64,18 @@ void						sign_or_space(t_pfstruct *data)
 		data->pfreturn += write(1, " ", 1);
 		data->fs.wid -= 1;
 	}
+}
+
+int							write_ch(int i, char ch)
+{
+	char					count;
+
+	count = 0;
+	while (i > 0)
+	{
+		write(1, &ch, 1);
+		i--;
+		count++;
+	}
+	return (count);
 }

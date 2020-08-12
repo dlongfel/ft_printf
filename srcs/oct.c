@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   unsignedint.c                                      :+:      :+:    :+:   */
+/*   oct.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skennith <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/10 12:39:01 by skennith          #+#    #+#             */
-/*   Updated: 2020/07/10 12:39:03 by skennith         ###   ########.fr       */
+/*   Created: 2020/08/09 14:33:11 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/10 12:55:24 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_uint3(t_pfstruct *data)
+void			p_oct_1(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
@@ -21,13 +21,13 @@ void	print_uint3(t_pfstruct *data)
 			data->pfreturn += write(1, &data->fs.sign, 1);
 			data->fs.wid -= 1;
 		}
-		data->pfreturn += write_chars(data->fs.wid - \
+		data->pfreturn += write_ch(data->fs.wid - \
 			(int)ft_strlen(data->fs.fnl), '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
 	else
 	{
-		data->pfreturn = write_chars(data->fs.wid - \
+		data->pfreturn = write_ch(data->fs.wid - \
 			ft_strlen(data->fs.fnl) - (data->fs.sign ? 1 : 0), ' ');
 		if (data->fs.sign)
 		{
@@ -38,9 +38,9 @@ void	print_uint3(t_pfstruct *data)
 	}
 }
 
-void	print_uint2(t_pfstruct *data)
+void			p_oct_2(t_pfstruct *data)
 {
-	precision_zero(data);
+	prec_0(data);
 	if (!data->fs.wid)
 	{
 		if (data->fs.sign)
@@ -58,14 +58,12 @@ void	print_uint2(t_pfstruct *data)
 			}
 			data->pfreturn += ft_putstrcount(data->fs.fnl);
 			data->fs.wid -= ft_strlen(data->fs.fnl);
-			data->pfreturn += write_chars(data->fs.wid, ' ');
+			data->pfreturn += write_ch(data->fs.wid, ' ');
 		}
-		else
-			print_uint3(data);
 	}
 }
 
-void	print_unsigned_int(t_pfstruct *data)
+void			p_oct_main(t_pfstruct *data)
 {
 	intmax_t	num;
 
@@ -82,7 +80,7 @@ void	print_unsigned_int(t_pfstruct *data)
 		num = (unsigned int)va_arg(data->args, unsigned int);
 	data->fs.sign = data->fs.flag.plus ? '+' : 0;
 	data->fs.fnl = num == 0 && data->fs.pr_z && \
-	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 10);
+	!data->fs.precision ? ft_strnew(1) : ft_itoa_base(num, 8);
 	if (data->fs.sign)
 		data->fs.flag.space = 0;
 	if (data->fs.flag.minus || data->fs.precision)
@@ -90,5 +88,5 @@ void	print_unsigned_int(t_pfstruct *data)
 	if (data->fs.precision + (data->fs.sign ? 1 : 0) >= data->fs.wid || \
 	(int)ft_strlen(data->fs.fnl) + (data->fs.sign ? 1 : 0) >= data->fs.wid)
 		data->fs.wid = 0;
-	print_uint2(data);
+	p_oct_2(data);
 }

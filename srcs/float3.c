@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   float3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skennith <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 23:16:39 by skennith          #+#    #+#             */
-/*   Updated: 2020/07/21 23:16:42 by skennith         ###   ########.fr       */
+/*   Created: 2020/08/11 12:26:24 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 13:18:21 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ void		print_float4(t_pfstruct *data)
 {
 	if (data->fs.wid > 0)
 	{
-		sign_or_space(data);
+		spacensign(data);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 		data->fs.wid -= ft_strlen(data->fs.fnl);
-		data->pfreturn += write_chars(data->fs.wid, ' ');
+		data->pfreturn += write_ch(data->fs.wid, ' ');
 	}
 	else
 	{
-		data->fs.wid = md(data->fs.wid);
-		sign_or_space(data);
+		data->fs.wid = modulus(data->fs.wid);
+		spacensign(data);
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 		data->fs.wid += ft_strlen(data->fs.fnl);
-		data->pfreturn += write_chars(md(data->fs.wid), ' ');
+		data->pfreturn += write_ch(modulus(data->fs.wid), ' ');
 	}
 }
 
@@ -35,8 +35,8 @@ void		print_float3(t_pfstruct *data)
 {
 	if (data->fs.flag.zero)
 	{
-		sign_or_space(data);
-		data->pfreturn += write_chars(data->fs.wid - \
+		spacensign(data);
+		data->pfreturn += write_ch(data->fs.wid - \
 			(int)ft_strlen(data->fs.fnl), '0');
 		data->pfreturn += ft_putstrcount(data->fs.fnl);
 	}
@@ -47,7 +47,7 @@ void		print_float3(t_pfstruct *data)
 			data->pfreturn += write(1, " ", 1);
 			data->fs.wid -= 1;
 		}
-		data->pfreturn = write_chars(data->fs.wid - \
+		data->pfreturn = write_ch(data->fs.wid - \
 			ft_strlen(data->fs.fnl) - (data->fs.sign ? 1 : 0), ' ');
 		if (data->fs.sign)
 		{
@@ -62,7 +62,7 @@ void		print_float2(t_pfstruct *data)
 {
 	char	*buf;
 
-	precision_zero(data);
+	prec_0(data);
 	if (data->fs.precision == 0 && data->fs.flag.sharp)
 	{
 		buf = data->fs.fnl;

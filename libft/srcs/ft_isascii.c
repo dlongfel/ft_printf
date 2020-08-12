@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/03 13:52:43 by richardbrac       #+#    #+#             */
-/*   Updated: 2020/07/03 13:52:44 by richardbrac      ###   ########.fr       */
+/*   Created: 2020/08/11 14:15:16 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 14:15:17 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

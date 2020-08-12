@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   float2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cspaghet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/24 23:49:16 by cspaghet          #+#    #+#             */
-/*   Updated: 2020/07/24 23:49:22 by cspaghet         ###   ########.fr       */
+/*   Created: 2020/08/11 12:26:16 by dlongfel          #+#    #+#             */
+/*   Updated: 2020/08/11 13:17:22 by dlongfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char		*from_bin(char *str)
 	{
 		if ((str[i] - '0') == 1)
 		{
-			pow = power2(i + 1);
+			pow = power_2(i + 1);
 			k = sum1(k, pow);
 		}
 		i++;

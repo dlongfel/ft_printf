@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: richardbrackswaide <richardbrackswaide@    +#+  +:+       +#+         #
+#    By: dlongfel <dlongfel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/08/07 18:02:05 by richardbrac       #+#    #+#              #
-#    Updated: 2020/08/07 18:02:07 by richardbrac      ###   ########.fr        #
+#    Created: 2020/08/11 14:20:07 by dlongfel          #+#    #+#              #
+#    Updated: 2020/08/11 14:20:09 by dlongfel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
